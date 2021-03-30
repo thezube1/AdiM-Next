@@ -1,0 +1,419 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 250px;
+}
+
+.mainHeader {
+  font-family: "Source Sans Pro";
+  font-weight: 900;
+  font-style: italic;
+  font-size: 80px;
+  color: black;
+}
+
+.mainText {
+  font-family: "Quicksand";
+  font-weight: 300;
+  font-size: 30px;
+  color: black;
+}
+
+#featuredWrapper {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+#featuredContent {
+  display: flex;
+  justify-content: center;
+}
+
+#mainBackground {
+  background-image: url("../public/photos/aditya_car.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#textWrapper {
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 700px;
+}
+
+#backgroundText {
+  font-family: "Source Sans Pro";
+  font-weight: 900;
+  font-size: 500px;
+  color: white;
+  position: absolute;
+  bottom: -145px;
+  right: 0px;
+}
+
+#mainAboutWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+#mainAboutContent {
+  margin-top: 500px;
+  display: grid;
+  grid-template-columns: 600px 400px;
+  justify-content: center;
+  width: max-content;
+}
+
+#mainAboutImage {
+  max-width: 600px;
+  z-index: 0;
+}
+
+#mainAboutHeader {
+  margin-top: 220px;
+  width: max-content;
+  color: rgb(247, 199, 203);
+  font-size: 120px;
+  position: relative;
+  right: 90px;
+}
+
+#mainAboutText {
+  width: 400px;
+  font-weight: 300;
+  font-size: 25px;
+  margin-left: 20px;
+}
+
+#musicContent {
+  display: flex;
+  justify-content: center;
+  margin-top: 300px;
+}
+
+#musicContentWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  grid-column-gap: 30px;
+}
+
+#musicSeperator {
+  background-color: rgb(80, 80, 80);
+  width: 1px;
+  height: 90%;
+}
+
+#musicSound {
+  display: grid;
+  column-gap: 20px;
+  max-width: 620px;
+  width: 100vw;
+  grid-template-columns: repeat(auto-fit, 300px);
+  row-gap: 20px;
+}
+
+#musicTitleWrapper {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+#musicTitle {
+  color: rgb(247, 199, 203);
+  font-size: 260px;
+  margin-right: 20px;
+  line-height: 1;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-style: normal;
+  margin-top: 70px;
+}
+
+.musicLink {
+  color: black;
+  margin-right: 25px;
+}
+
+#musicLinkWrapper {
+  display: inline;
+}
+
+#videoTitle {
+  color: rgb(36, 36, 36);
+  font-size: 240px;
+  margin-right: 20px;
+  line-height: 1;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-style: normal;
+  margin-top: 70px;
+}
+
+#videoWrapper {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+#musicVideo {
+  display: grid;
+  margin-right: 100px;
+}
+
+#contactWrapper {
+  margin-top: 500px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 500px;
+}
+
+#contactContent {
+  display: grid;
+  justify-items: center;
+}
+
+#contactTitle {
+  width: max-content;
+  text-align: center;
+}
+
+#contactEnvelope {
+  display: flex;
+  align-items: center;
+}
+
+#contactMailText {
+  margin-left: 10px;
+  font-family: "Source Sans Pro";
+  font-weight: 300;
+  font-style: italic;
+  font-size: 30px;
+}
+
+#pressWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#pressContent {
+  margin-top: 500px;
+}
+
+#pressHeader {
+  margin-bottom: 50px;
+  width: max-content;
+  color: rgb(140, 167, 255);
+}
+
+#pressSquareWrapper {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.pressButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.pressButton:active {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.pressSquareContent {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.pressSquare {
+  height: 30px;
+  width: 30px;
+  background-color: black;
+}
+
+.pressText {
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+}
+
+#modalStyle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 900px;
+  max-height: 1000px;
+  width: 90%;
+  height: 90%;
+  background-color: white;
+  outline: none;
+}
+
+#modalExitWrapper {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  right: 0px;
+}
+
+#modalExitWrapper:active {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#pressArticleWrapper {
+  padding: 50px;
+  scroll-behavior: smooth;
+}
+
+#pressArticleHeader {
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+#pressArticleAuthor {
+  font-family: "Source Sans Pro";
+  font-size: 30px;
+  font-weight: 500;
+  background-color: rgba(252, 186, 3, 0.65);
+  padding: 5px;
+}
+
+#pressArticleText {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  line-height: 45px;
+  overflow-y: auto;
+  max-height: 500px;
+}
+
+#pressArticleLink {
+  color: black;
+  text-decoration: none;
+  font-family: "Source Sans Pro";
+  font-size: 20px;
+  margin-top: 50px;
+  background-color: rgba(252, 186, 3, 0.65);
+  padding: 2px;
+  font-style: italic;
+}
+
+@media screen and (max-width: 2000px) {
+  #backgroundText {
+    font-size: 400px;
+    bottom: -115px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  #musicContentWrapper {
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+  }
+  #musicSeperator {
+    height: 1px;
+    width: 200px;
+  }
+  #musicSound {
+    justify-content: center;
+  }
+  #videoWrapper {
+    display: block;
+  }
+  #musicVideo {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  #musicSeperator {
+    justify-self: center;
+  }
+  #musicTitle {
+    text-align: center;
+    margin: 0px;
+    margin-top: 0px;
+  }
+  #musicLinkWrapper {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #mainAboutContent {
+    display: flex;
+    flex-direction: column-reverse;
+    width: min-content;
+    grid-template-columns: none;
+  }
+  #mainAboutImage {
+    margin-top: 20px;
+    max-width: 500px;
+    width: 90%;
+  }
+  #mainAboutText {
+    margin-left: 0px;
+  }
+  #mainAboutHeader {
+    right: 0px;
+  }
+  #mainAboutTextWrapper {
+    width: max-content;
+  }
+  #musicTitle {
+    text-align: center;
+    font-size: 200px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  #contactMailText {
+    font-size: 24px;
+  }
+  .musicLink {
+    margin-right: 10px;
+  }
+  #backgroundText {
+    font-size: 240px;
+    bottom: -70px;
+  }
+  #musicTitle {
+    font-size: 140px;
+  }
+
+  #mainAboutText {
+    width: 300px;
+  }
+  .pressText {
+    width: 300px;
+  }
+}

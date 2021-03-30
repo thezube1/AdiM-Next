@@ -1,65 +1,71 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Navbar from "../components/navbar/Navbar";
+import React, { Component } from "react";
+import dynamic from "next/dynamic";
+import { Fade } from "react-reveal";
+const Text = dynamic(() => import("../components/3Dtext/text"));
+//import Text from "../components/3Dtext/text";
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+import Spinner from "../components/spinner/Spinner";
+import FeaturedContent from "../components/home/FeaturedContent";
+import MusicContent from "../components/home/MusicContent";
+import VideoContent from "../components/home/VideoContent";
+import AboutContent from "../components/home/AboutContent";
+import PressContent from "../components/home/PressContent";
+import ContactContent from "../components/home/ContactContent";
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+class Home extends Component {
+  state = { open: true, loading: true, width: 700 };
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+  componentDidMount() {
+    window.addEventListener("resize", this.handleResize);
+  }
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize);
+  }
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+  handleResize = () => {
+    this.setState({ width: window.innerWidth });
+  };
+  render() {
+    return (
+      <React.Fragment>
+        <Spinner isOpen={this.state.loading} />
+        <div>
+          <Navbar />
+          <div>
+            <div id="section1">
+              <div id="mainBackground">
+                <Fade left>
+                  <div id="textWrapper">
+                    <Text width={this.state.width} />
+                  </div>
+                </Fade>
+              </div>
+            </div>
+            <div>
+              <FeaturedContent />
+            </div>
+            <div id="section2">
+              <MusicContent
+                toggleLoading={(e) => this.setState({ loading: e })}
+              />
+              <VideoContent />
+            </div>
+            <div id="section3">
+              <AboutContent />
+            </div>
+            <div id="section4">
+              <PressContent />
+            </div>
+            <div id="section5">
+              <ContactContent />
+            </div>
+          </div>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+      </React.Fragment>
+    );
+  }
 }
+
+export default Home;

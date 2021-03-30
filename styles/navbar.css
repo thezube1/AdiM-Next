@@ -1,0 +1,97 @@
+.navbarWrapper {
+  width: 100vw;
+  position: fixed;
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox; /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 25px;
+  transition: background-color 0.5s;
+  z-index: 1;
+}
+
+.navbarWrapperVertical {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  padding: 25px;
+  transition: background-color 0.5s;
+  z-index: 1;
+  margin-top: 50px;
+}
+
+.navbarItem {
+  font-family: "Source Sans Pro";
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1;
+  color: white;
+  position: relative;
+}
+
+.navbarItemUnder {
+  width: 0%;
+  height: 1px;
+  background-color: white;
+  position: relative;
+  top: 2px;
+}
+
+.navbarSocial {
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.burgerLine {
+  background-color: white;
+  width: 30px;
+  height: 2px;
+  transition: background-color 0.5s;
+}
+
+.scroll {
+  background-color: white;
+}
+
+.scroll2 {
+  color: black;
+}
+
+.scroll3 {
+  background-color: black;
+}
+
+#navbarBurgerWrapper {
+  display: none;
+  background: none;
+  width: max-content;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 550px) {
+  .navbarWrapper {
+    display: none;
+  }
+  #navbarBurgerWrapper {
+    display: grid;
+    grid-row-gap: 7px;
+    cursor: pointer;
+    z-index: 5;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+  }
+  .navbarItem {
+    color: black;
+    margin-bottom: 20px;
+  }
+  .navbarSocial {
+    color: black;
+    margin-bottom: 20px;
+  }
+}
