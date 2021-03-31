@@ -11,12 +11,6 @@ class PressContent extends Component {
     articles: undefined,
   };
 
-  componentDidMount() {
-    axios
-      .get("http://localhost:1337/articles")
-      .then((res) => this.setState({ articles: res.data }));
-  }
-
   render() {
     const textHighlight = {
       rest: {
@@ -47,23 +41,23 @@ class PressContent extends Component {
             {this.state.articleOpen === false ? undefined : (
               <div id="pressArticleWrapper">
                 <div className="mainHeader" id="pressArticleHeader">
-                  {this.state.articles[this.state.articleOpen].title}
+                  {this.props.articles[this.state.articleOpen].title}
                 </div>
                 <span id="pressArticleAuthor">
-                  {this.state.articles[this.state.articleOpen].author}
+                  {this.props.articles[this.state.articleOpen].author}
                 </span>
                 <div
                   id="pressArticleText"
                   className="mainText"
                   dangerouslySetInnerHTML={{
-                    __html: this.state.articles[this.state.articleOpen].text,
+                    __html: this.props.articles[this.state.articleOpen].text,
                   }}
                 />
                 <a
                   id="pressArticleLink"
                   target="_blank"
                   rel="noreferrer"
-                  href={this.state.articles[this.state.articleOpen].url}
+                  href={this.props.articles[this.state.articleOpen].url}
                 >
                   Read the full article
                 </a>
@@ -77,12 +71,12 @@ class PressContent extends Component {
               Press
             </div>
           </Fade>
-          <div id="pressSquareWrapper">
-            <Fade right>
-              {this.state.articles === undefined ? (
+          <Fade right>
+            <div id="pressSquareWrapper">
+              {this.props.articles === undefined ? (
                 <div>Loading</div>
               ) : (
-                this.state.articles.map((item, index) => {
+                this.props.articles.map((item, index) => {
                   return (
                     <div key={index} className="pressSquareContent">
                       <div className="pressSquare"></div>
@@ -110,8 +104,8 @@ class PressContent extends Component {
                   );
                 })
               )}
-            </Fade>
-          </div>
+            </div>
+          </Fade>
         </div>
       </div>
     );

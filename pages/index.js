@@ -10,11 +10,19 @@ import FeaturedContent from "../components/home/FeaturedContent";
 import MusicContent from "../components/home/MusicContent";
 import VideoContent from "../components/home/VideoContent";
 import AboutContent from "../components/home/AboutContent";
+
 import PressContent from "../components/home/PressContent";
+//import PressContentFunction from "../components/home/PressContentFunction";
+
 import ContactContent from "../components/home/ContactContent";
 
 class Home extends Component {
-  state = { open: true, loading: true, width: 700 };
+  state = {
+    open: true,
+    loading: true,
+    width: 700,
+    articles: this.props.articles,
+  };
 
   componentDidMount() {
     window.addEventListener("resize", this.handleResize);
@@ -56,7 +64,7 @@ class Home extends Component {
               <AboutContent />
             </div>
             <div id="section4">
-              <PressContent />
+              <PressContent articles={this.props.articles} />
             </div>
             <div id="section5">
               <ContactContent />
@@ -66,6 +74,17 @@ class Home extends Component {
       </React.Fragment>
     );
   }
+}
+
+export async function getStaticProps() {
+  const res = await fetch("https://adimahendru-admin.herokuapp.com/articles");
+  const articles = await res.json();
+
+  return {
+    props: {
+      articles,
+    },
+  };
 }
 
 export default Home;
