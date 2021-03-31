@@ -10,7 +10,7 @@ const lineExtend = {
     },
   },
   hover: {
-    width: "100%",
+    width: "67%",
     transition: {
       duration: 0.3,
     },
