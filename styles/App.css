@@ -20,31 +20,15 @@ html {
   color: black;
 }
 
-#featuredWrapper {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  justify-content: center;
-  align-content: center;
-}
-
-#featuredContent {
-  display: flex;
-  justify-content: center;
-}
-
 #mainBackground {
-  background-image: url("../public/photos/aditya_car.jpg");
+  height: 100vh;
+  width: 100%;
+  background: url("../public/photos/aditya_car.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 100vh;
-  width: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -316,6 +300,7 @@ html {
   line-height: 45px;
   overflow-y: auto;
   max-height: 500px;
+  height: auto !important;
 }
 
 #pressArticleLink {
@@ -393,9 +378,23 @@ html {
     text-align: center;
     font-size: 200px;
   }
+  #pressArticleHeader {
+    font-size: 50px;
+  }
+  #pressArticleAuthor {
+    font-size: 20px;
+  }
+  #pressArticleText {
+    font-size: 25px;
+    line-height: 1.5;
+    max-height: 400px;
+  }
 }
 
 @media screen and (max-width: 650px) {
+  #mainBackground {
+    background-attachment: scroll;
+  }
   #contactMailText {
     font-size: 24px;
   }
@@ -415,5 +414,18 @@ html {
   }
   .pressText {
     width: 300px;
+  }
+  #pressArticleWrapper {
+    padding: 20px;
+  }
+  #pressArticleHeader {
+    font-size: 30px;
+  }
+  #pressArticleAuthor {
+    font-size: 15px;
+  }
+  #pressArticleText {
+    font-size: 20px;
+    max-height: 300px;
   }
 }
