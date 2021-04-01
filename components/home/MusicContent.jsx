@@ -1,5 +1,9 @@
 import React, { Component } from "react";
-import ReactPlayer from "react-player";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Image from "next/image";
+import Link from "next/link";
+import axios from "axios";
 
 import { Fade, Zoom } from "react-reveal";
 import {
@@ -9,6 +13,7 @@ import {
   FaApple,
   FaYoutube,
 } from "react-icons/fa";
+import { Button } from "react-scroll";
 
 class MusicContent extends Component {
   state = {
@@ -183,9 +188,35 @@ class MusicContent extends Component {
           <Fade right>
             <div id="musicPlayerWrapper">
               <div id="musicSound">
-                {this.state.loadItems.map((item, index) => {
+                <Carousel
+                  centerMode={true}
+                  centerSlidePercentage={80}
+                  showIndicators={false}
+                  showStatus={false}
+                  showThumbs={false}
+                  width={500}
+                >
+                  {this.props.songs.map((item, index) => {
+                    return (
+                      <div key={index}>
+                        <a
+                          href={item.Url}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                        >
+                          <Image
+                            src={`https://adimahendru-admin.herokuapp.com${item.Photo.url}`}
+                            width={400}
+                            height={400}
+                          />
+                        </a>
+                      </div>
+                    );
+                  })}
+                </Carousel>
+                {/* {this.state.loadItems.map((item, index) => {
                   return <div key={index}>{item}</div>;
-                })}
+                })}*/}
               </div>
             </div>
           </Fade>

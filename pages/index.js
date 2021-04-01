@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import dynamic from "next/dynamic";
 import { Fade } from "react-reveal";
 const Text = dynamic(() => import("../components/3Dtext/text"));
+import axios from "axios";
 //import Text from "../components/3Dtext/text";
 
 import Spinner from "../components/spinner/Spinner";
@@ -19,9 +20,8 @@ import ContactContent from "../components/home/ContactContent";
 class Home extends Component {
   state = {
     open: true,
-    loading: true,
+    loading: false,
     width: 700,
-    articles: this.props.articles,
   };
 
   componentDidMount() {
@@ -57,6 +57,7 @@ class Home extends Component {
             <div id="section2">
               <MusicContent
                 toggleLoading={(e) => this.setState({ loading: e })}
+                songs={this.props.songs}
               />
               <VideoContent />
             </div>
@@ -77,12 +78,17 @@ class Home extends Component {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("https://adimahendru-admin.herokuapp.com/articles");
-  const articles = await res.json();
+  const articles = await axios.get(
+    "https://adimahendru-admin.herokuapp.com/articles"
+  );
+  const songs = await axios.get(
+    "https://adimahendru-admin.herokuapp.com/music-items"
+  );
 
   return {
     props: {
-      articles,
+      articles: articles.data,
+      songs: songs.data,
     },
   };
 }
