@@ -205,7 +205,7 @@ class MusicContent extends Component {
                           rel="noreferrer noopener"
                         >
                           <Image
-                            src={`https://adimahendru-admin.herokuapp.com${item.Photo.url}`}
+                            src={item.Photo.url}
                             width={400}
                             height={400}
                           />
