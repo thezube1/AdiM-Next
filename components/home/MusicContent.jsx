@@ -19,70 +19,9 @@ class MusicContent extends Component {
   state = {
     width: 0,
     height: 0,
-    loadItems: [
-      <div>
-        <iframe
-          onLoad={() => this.changeLoadStatus(0)}
-          style={{ border: 0, width: 300, height: 300 }}
-          src="https://bandcamp.com/EmbeddedPlayer/track=2156442761/size=large/bgcol=ffffff/linkcol=333333/minimal=true/transparent=true/"
-          seamless
-        >
-          <a href="https://adimahendru.bandcamp.com/track/never-been-easy">
-            Never Been Easy by Adi M
-          </a>
-        </iframe>
-      </div>,
-      <div>
-        <iframe
-          onLoad={() => this.changeLoadStatus(1)}
-          style={{ border: 0, width: 300, height: 300 }}
-          src="https://bandcamp.com/EmbeddedPlayer/album=1686741501/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/"
-          seamless
-        >
-          <a href="https://adimahendru.bandcamp.com/album/forever-working-title">
-            Forever Working Title by Adi M
-          </a>
-        </iframe>
-      </div>,
-      <div>
-        <iframe
-          onLoad={() => this.changeLoadStatus(2)}
-          style={{ border: 0, width: 300, height: 300 }}
-          src="https://bandcamp.com/EmbeddedPlayer/track=3929755664/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/"
-          seamless
-        >
-          <a href="https://adimahendru.bandcamp.com/track/the-next-winner">
-            The Next Winner by Adi M
-          </a>
-        </iframe>
-      </div>,
-    ],
-    loading: [],
-    loaded: false,
   };
-
-  changeLoadStatus = (index) => {
-    let initArray = this.state.loading;
-    initArray[index] = false;
-    this.setState({ loading: initArray });
-  };
-
-  componentDidUpdate() {
-    if (
-      this.state.loading.every((val) => val === false) == true &&
-      this.state.loaded === false
-    ) {
-      this.props.toggleLoading(false);
-      this.setState({ loaded: true });
-    }
-  }
 
   componentDidMount() {
-    let loadingCurrent = [];
-    for (let i = 0; i < this.state.loadItems.length; i++) {
-      loadingCurrent.push(true);
-    }
-    this.setState({ loading: loadingCurrent });
     this.updateWindowDimensions();
     window.addEventListener("resize", this.updateWindowDimensions);
   }
@@ -100,9 +39,7 @@ class MusicContent extends Component {
         <div id="musicContentWrapper">
           <div id="musicTitleWrapper">
             <Fade left>
-              <div id="musicTitle" className="mainHeader">
-                Music
-              </div>
+              <div className="mainHeader musicTitle">Music</div>
               <div id="musicLinkWrapper">
                 <a
                   className="musicLink"
@@ -189,12 +126,14 @@ class MusicContent extends Component {
             <div id="musicPlayerWrapper">
               <div id="musicSound">
                 <Carousel
+                  autoPlay={true}
+                  infiniteLoop={true}
                   centerMode={true}
                   centerSlidePercentage={80}
-                  showIndicators={false}
+                  showIndicators={true}
                   showStatus={false}
                   showThumbs={false}
-                  width={500}
+                  width={this.state.width > 550 ? 500 : 300}
                 >
                   {this.props.songs.map((item, index) => {
                     return (
@@ -214,9 +153,6 @@ class MusicContent extends Component {
                     );
                   })}
                 </Carousel>
-                {/* {this.state.loadItems.map((item, index) => {
-                  return <div key={index}>{item}</div>;
-                })}*/}
               </div>
             </div>
           </Fade>

@@ -1,0 +1,71 @@
+.carousel.carousel-slider {
+  overflow: inherit;
+}
+
+.carousel .control-next.control-arrow,
+.carousel .control-next.control-arrow:hover {
+  background-color: transparent;
+  right: -50px;
+}
+
+.carousel .control-prev.control-arrow,
+.carousel .control-prev.control-arrow:hover {
+  background-color: transparent;
+  left: -50px;
+}
+
+.carousel .control-arrow,
+.carousel.carousel-slider .control-arrow {
+  opacity: 0.8;
+}
+
+.carousel .control-next.control-arrow:before {
+  content: "";
+  border: solid #000000;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 14px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.carousel .control-prev.control-arrow:before {
+  content: "";
+  border: solid #000000;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 14px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.carousel.carousel-slider .control-dots {
+  background-color: white;
+  border-radius: 50px;
+  padding: 10px;
+  padding-top: 12px;
+  width: max-content;
+  left: 50%;
+  transform: translate(-50%);
+}
+.carousel.carousel-slider .dot {
+  position: relative;
+
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  border-radius: 50px;
+  box-shadow: none;
+}
+
+@media screen and (max-width: 420px) {
+  .carousel .control-next.control-arrow,
+  .carousel .control-next.control-arrow:hover {
+    right: -35px;
+  }
+
+  .carousel .control-prev.control-arrow,
+  .carousel .control-prev.control-arrow:hover {
+    left: -35px;
+  }
+}

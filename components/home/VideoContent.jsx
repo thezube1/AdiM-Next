@@ -7,7 +7,7 @@ const VideoContent = () => {
   return (
     <div id="videoWrapper">
       {width < 1400 ? (
-        <div id="musicTitle" className="mainHeader">
+        <div id="videoTitle" className="musicTitle mainHeader">
           Video
         </div>
       ) : (
@@ -24,7 +24,7 @@ const VideoContent = () => {
         />
       </div>
       {width > 1400 ? (
-        <div id="videoTitle" className="mainHeader">
+        <div id="videoTitle" className="musicTitle mainHeader">
           Video
         </div>
       ) : (

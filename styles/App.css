@@ -105,23 +105,26 @@ html {
   height: 90%;
 }
 
-#musicSound {
-  display: grid;
-  column-gap: 20px;
-  max-width: 620px;
-  width: 100vw;
-  grid-template-columns: repeat(auto-fit, 300px);
-  row-gap: 20px;
-}
-
 #musicTitleWrapper {
   display: grid;
   justify-items: center;
   align-items: center;
 }
 
-#musicTitle {
-  color: rgb(247, 199, 203);
+#videoTitle {
+  background-image: linear-gradient(110deg, #51a5f3, rgb(247, 199, 203));
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 240px;
+}
+
+.musicTitle {
+  /*color: rgb(247, 199, 203); */
+  background-image: linear-gradient(110deg, rgb(247, 199, 203), #51a5f3);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 260px;
   margin-right: 20px;
   line-height: 1;
@@ -140,15 +143,11 @@ html {
   display: inline;
 }
 
-#videoTitle {
-  color: rgb(36, 36, 36);
-  font-size: 240px;
-  margin-right: 20px;
-  line-height: 1;
-  margin-bottom: 20px;
-  font-weight: 600;
-  font-style: normal;
-  margin-top: 70px;
+#musicPlayerWrapper {
+  width: max-content;
+  display: grid;
+  justify-self: center;
+  margin-bottom: 50px;
 }
 
 #videoWrapper {
@@ -331,7 +330,7 @@ html {
     width: 200px;
   }
   #musicSound {
-    justify-content: center;
+    width: max-content;
   }
   #videoWrapper {
     display: block;
@@ -343,13 +342,22 @@ html {
   #musicSeperator {
     justify-self: center;
   }
-  #musicTitle {
+  .musicTitle {
     text-align: center;
     margin: 0px;
     margin-top: 0px;
   }
+  #videoTitle {
+    text-align: center;
+    margin: 0px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+  }
   #musicLinkWrapper {
     align-items: center;
+  }
+  #musicPlayerWrapper {
+    margin-bottom: 0px;
   }
 }
 
@@ -374,7 +382,11 @@ html {
   #mainAboutTextWrapper {
     width: max-content;
   }
-  #musicTitle {
+  .musicTitle {
+    text-align: center;
+    font-size: 200px;
+  }
+  #videoTitle {
     text-align: center;
     font-size: 200px;
   }
@@ -405,7 +417,10 @@ html {
     font-size: 240px;
     bottom: -70px;
   }
-  #musicTitle {
+  .musicTitle {
+    font-size: 140px;
+  }
+  #videoTitle {
     font-size: 140px;
   }
 
