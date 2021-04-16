@@ -208,8 +208,10 @@ html {
 }
 
 #pressSquareWrapper {
-  width: max-content;
+  max-width: 1000px;
+  width: 90%;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   gap: 30px;
 }
@@ -228,11 +230,12 @@ html {
 
 .pressSquareContent {
   display: flex;
-  gap: 20px;
+
   align-items: center;
 }
 
 .pressSquare {
+  margin-right: 20px;
   height: 30px;
   width: 30px;
   background-color: black;

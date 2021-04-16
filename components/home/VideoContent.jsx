@@ -6,12 +6,12 @@ const VideoContent = () => {
   const width = useWindowSize();
   return (
     <div id="videoWrapper">
-      {width < 1400 ? (
+      {width > 1400 ? (
+        false
+      ) : (
         <div id="videoTitle" className="musicTitle mainHeader">
           Video
         </div>
-      ) : (
-        false
       )}
       <div id="musicVideo">
         <ReactPlayer

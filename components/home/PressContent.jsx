@@ -89,7 +89,7 @@ class PressContent extends Component {
                           this.setState({ open: true, articleOpen: index })
                         }
                       >
-                        <motion.div
+                        <motion.span
                           variants={textHighlight}
                           className="mainText pressText"
                         >
@@ -98,7 +98,7 @@ class PressContent extends Component {
                             {" "}
                             - {item.author}
                           </span>
-                        </motion.div>
+                        </motion.span>
                       </motion.button>
                     </div>
                   );
