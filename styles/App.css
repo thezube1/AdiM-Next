@@ -117,6 +117,7 @@ html {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 240px;
+  margin-left: 80px;
 }
 
 .musicTitle {
