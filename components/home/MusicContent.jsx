@@ -127,7 +127,7 @@ class MusicContent extends Component {
               <div id="musicSound">
                 <Carousel
                   autoPlay={true}
-                  infiniteLoop={true}
+                  infiniteLoop={false}
                   centerMode={true}
                   centerSlidePercentage={80}
                   showIndicators={true}
