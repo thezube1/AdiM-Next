@@ -1,40 +1,45 @@
 import React from "react";
 import { Fade, Zoom } from "react-reveal";
+import ReactPlayer from "react-player";
 
 const FeaturedContent = () => {
   return (
     <div className="featuredWrapper">
       <div className="featuredContent">
-        <div style={{ maxWidth: "max-content" }}>
-          <Fade left>
-            <div id="featuredTitle">
-              Summer <br />
-              Daydream
-            </div>
-          </Fade>
-          <Zoom cascade>
-            <div id="featuredBar"></div>
-          </Zoom>
-        </div>
-        <Fade right>
-          <div
-            className="featuredHeader"
-            style={{ fontSize: 20, marginTop: 10, color: "rgb(247, 199, 203)" }}
-          >
-            Out now
+        <div style={{ paddingLeft: 50 }}>
+          <div style={{ maxWidth: "max-content" }}>
+            <Fade left>
+              <div id="featuredTitle">
+                Summer <br />
+                Daydream
+              </div>
+            </Fade>
+            <Zoom cascade>
+              <div id="featuredBar"></div>
+            </Zoom>
           </div>
-        </Fade>
-        <div id="featuredListenWrapper">
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://ffm.to/summerdaydream"
-            id="featuredListenText"
-            className="featuredHeader"
-          >
-            Listen 
-          </a>
-          <div id="featuredListenBack"></div>
+          <div id="featuredListenWrapper">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://ffm.to/summerdaydream"
+              id="featuredListenText"
+              className="featuredHeader"
+            >
+              Listen
+            </a>
+            <div id="featuredListenBack"></div>
+          </div>
+        </div>
+        <div id="featuredVideo">
+          <ReactPlayer
+            className="react-player"
+            url="https://www.youtube.com/watch?v=5vIzl-PxKAU"
+            width={800}
+            height={450}
+            controls={false}
+            //controls
+          />
         </div>
       </div>
     </div>

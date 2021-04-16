@@ -34,8 +34,9 @@ const Text = (props) => {
       <Text1 position={[-6.5, -1, 0]} />
 
       <OrbitControls
+        enabled={width > 700 ? true : false}
         enableZoom={false}
-        minDistance={10}
+        minDistance={width > 700 ? 11 : 18}
         enablePan={false}
         autoRotate={true}
         autoRotateSpeed={2}
