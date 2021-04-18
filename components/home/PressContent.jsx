@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { motion } from "framer-motion";
 import ModalGroup from "../modal/Modal";
-import axios from "axios";
 import { Fade } from "react-reveal";
 
 class PressContent extends Component {
@@ -15,14 +14,14 @@ class PressContent extends Component {
     const textHighlight = {
       rest: {
         transition: {
-          duration: 0.8,
+          duration: 2,
         },
       },
       hover: {
         backgroundImage:
           "linear-gradient(to right, rgba(252, 186, 3, .65) 100%, white 0%)",
         transition: {
-          duration: 0.8,
+          duration: 1,
         },
       },
       leave: {
