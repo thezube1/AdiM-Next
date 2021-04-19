@@ -207,14 +207,14 @@ html {
 }
 
 #contactSVG {
-  stroke-dasharray: 450;
-  stroke-dashoffset: 450;
-  animation: draw 5s linear forwards;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: draw 2s linear forwards;
 }
 
 @keyframes draw {
   to {
-    stroke-dashoffset: 40;
+    stroke-dashoffset: 0;
   }
 }
 
