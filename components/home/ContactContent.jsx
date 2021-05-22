@@ -4,6 +4,8 @@ import { BsEnvelope } from "react-icons/bs";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+import ScrollAnimation from "react-animate-on-scroll";
+import "animate.css/animate.min.css";
 
 const MailIcon = () => {
   const controls = useAnimation();
@@ -57,21 +59,17 @@ class ContactContent extends Component {
           <div className="mainHeader" id="contactTitle">
             Contact
           </div>
+
           <a
             href="mailto: adimahendru96@gmail.com"
             style={{ textDecoration: "none", color: "black" }}
           >
             <div id="contactEnvelope">
-              <MailIcon />
-
-              <div id="contactMailText">adimahendru96@gmail.com</div>
-            </div>
-            {/*<div id="contactEnvelope">
               <BsEnvelope
                 style={{ color: "rgb(25, 25, 25)", width: 40, height: 40 }}
               />
               <div id="contactMailText">adimahendru96@gmail.com</div>
-            </div> */}
+            </div>
           </a>
         </div>
       </div>

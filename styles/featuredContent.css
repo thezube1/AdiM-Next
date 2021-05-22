@@ -15,13 +15,14 @@
 }
 
 #featuredVideo {
-  margin-top: 50px;
   display: flex;
   justify-content: center;
 }
 .react-player {
   max-width: 800px;
   width: 90% !important;
+  max-height: 450px !important;
+  height: 90%;
 }
 
 #featuredTitle {
